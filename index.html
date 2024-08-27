@@ -1,0 +1,776 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Hello, I am Comfy Designer</title>
+   <link rel="stylesheet" href="css/style.css">
+   <link rel="stylesheet" href="lib/fullpage.css">
+
+   <script src="lib/jquery-3.7.1.min.js"></script>
+   <script src="lib/fullpage.js"></script>
+   
+
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+   <script>
+      $(function () {
+         // 변수 선언
+         var imageButton = $('.item-box .event_wrap a');
+         var popup = $('.img-popup');
+         var closeButton = popup.find('> .popup-inner > .close-btn');
+         var htmlAndBody = $('html, body, .fp-viewing-6');
+         var focusTarget;
+
+         // 팝업 생성
+         imageButton.on('click', function (e) {
+            e.preventDefault();
+            var popupImg = popup.find('> .popup-inner > img');
+            var image = $(this).find('> img');
+            var src = image.attr('src');
+            var alt = image.attr('alt');
+            focusTarget = $(this);
+            popupImg.attr('src', src).attr('alt', alt);
+            createPopup();
+         });
+
+         // 팝업 제거
+         popup.on('click', function () {
+            removePopup();
+         });
+         closeButton.on('click', function (e) {
+            e.preventDefault();
+            removePopup();
+         });
+
+         // 팝업창 검은배경과 닫기 버튼을 제외한 나머지 부분 클릭시 닫히지 않도록 하기
+         popup.find('> .popup-inner').on('click', function (e) {
+            e.stopPropagation();
+         })
+
+         // 팝업 생성 함수
+         function createPopup() {
+            popup.addClass('active');
+            htmlAndBody.css('overflow-y', 'hidden');
+            setTimeout(function () {
+               closeButton.focus();
+            }, 50);
+         }
+         // 팝업 제거 함수
+         function removePopup() {
+            popup.removeClass('active');
+            focusTarget.focus();
+            htmlAndBody.css('overflow-y', 'visible');
+         }
+      })
+   </script>
+
+
+</head>
+
+<body>
+
+   <header id="header">
+      <div class="logo">
+         Hello, I am <span>Comfy Designer</span>
+      </div>
+      <div class="nav">
+         <ul class="gnb">
+            <li><a href="#1">intro</a></li>
+            <li><a href="#2">about</a></li>
+            <li><a href="#3">project</a></li>
+            <li><a href="#7">contact</a></li>
+         </ul>
+      </div>
+   </header>
+
+   <div id="fullpage">
+
+      <div class="section" id="section0">
+         <div class="intro">
+            <div class="top_text">
+               <span>2024<br />Design Portfolio</span>
+               <p>Web designer / publisher</p>
+               <p>Designed by Juhui Park</p>
+            </div>
+            <div class="pillow">
+               <img src="img/intro/orange_pillow.png" alt="오렌지 쿠션">
+            </div><!-- .pillow -->
+
+            <div class="title">
+               <h1>Hello, i am<br />
+                  <p>Comfy Designer</p>
+               </h1>
+            </div><!-- .title -->
+         </div><!-- .intro -->
+      </div><!-- #section0 - intro -->
+
+      <div class="section" id="section1">
+         <div class="inner">
+            <div class="sub">
+               <h3>마음이 편한 과정과<br />
+                  눈이 편한 디자인을<br />
+                  목표합니다.
+               </h3>
+               <p>기다리는 사람을 애태우지 않는
+                  원활한 소통으로 마음을 편안하게 하고,
+                  작은 것도 쉽게 놓치지 않는 디테일함과
+                  탄탄한 기초를 바탕으로 만들어지는 완성도 높은
+                  디자인으로 눈을 편안하게 해드리겠습니다.</p>
+            </div><!-- .sub -->
+
+            <div class="profile">
+               <div class="photo">
+                  <img src="img/about/profile.png" alt="증명사진">
+               </div><!-- .photo -->
+               <div class="myinfo">
+                  <div class="name">박주희 <span>PARK JU HUI</span></div>
+                  <ul>
+                     <li>1992.9.16</li>
+                     <li><strong>P </strong>010-5559-2025</li>
+                     <li><strong>E </strong>1992vibe@naver.com</li>
+                  </ul>
+               </div><!-- .myinfo -->
+            </div><!-- profile -->
+
+            <div class="line 3">
+
+               <div class="career">
+                  <h4>CAREER</h4>
+                  <div class="textbox">
+                     <p>2019.8 - 2024.2 (4년 7개월)</p>
+                     <span>자동차용품 쇼핑몰 ‘제트비’<br />
+                        웹, 컨텐츠 디자이너 근무</span>
+                  </div><!-- textbox -->
+                  <div class="textbox">
+                     <p>2018.11 - 2019.8 (10개월)</p>
+                     <span>광고디자인 업체 ‘디자인마음’<br />
+                        간판, 현수막 등 광고물 디자이너 근무</span>
+                  </div><!-- textbox -->
+               </div><!-- .career -->
+
+               <div class="edu">
+                  <h4>EDUCATION</h4>
+                  <div class="textbox">
+                     <p>2024.4 - 2024.8</p>
+                     <span>그린컴퓨터아카데미<br />
+                        반응형 UI/UX<br />
+                        웹디자인 & 웹퍼블리셔<br />
+                        웹개발자 양성과정</span>
+                  </div><!-- textbox -->
+                  <div class="textbox">
+                     <p>2011.3 - 2013.2</p>
+                     <span>영남이공대학교<br />
+                        패션코디디자인과 졸업 GPA 4.07</span>
+                  </div><!-- textbox -->
+               </div><!-- .edu -->
+
+            </div><!-- .line 3 -->
+
+            <div class="line 4">
+
+               <div class="license">
+                  <h4>CERTIFICATE & LICENSE</h4>
+                  <div class="textbox">
+                     <p>2012.6</p>
+                     <span>컬러리스트산업기사</span>
+                  </div><!-- textbox -->
+                  <div class="textbox">
+                     <p>2010.7</p>
+                     <span>컴퓨터그래픽스운용기능사</span>
+                  </div><!-- textbox -->
+                  <div class="textbox">
+                     <p>2010.6</p>
+                     <span>컴퓨터활용능력 3급</span>
+                  </div><!-- textbox -->
+                  <div class="textbox">
+                     <p>2003.9</p>
+                     <span>워드프로세서 2급</span>
+                  </div><!-- textbox -->
+                  <div class="textbox">
+                     <p>2012.1</p>
+                     <span>자동차운전면허 2종 보통</span>
+                  </div><!-- textbox -->
+               </div><!-- .license -->
+
+               <div class="skills">
+                  <h4>SKILLS</h4>
+                  <div class="iconbox">
+                     <img src="img/about/Photoshop.png" alt="포토샵" />
+                     <img src="img/about/Illustrator.png" alt="일러스트" />
+                     <img src="img/about/Figma.png" alt="피그마" />
+                     <img src="img/about/VSCode.png" alt="VScode" />
+                     <img src="img/about/html.png" alt="HTML" />
+                     <img src="img/about/css.png" alt="CSS" />
+                     <img src="img/about/JavaScript.png" alt="JS" />
+                  </div><!-- textbox -->
+
+               </div><!-- .skills -->
+
+            </div><!-- .line 3 -->
+         </div><!-- .inner -->
+      </div><!-- #section1 - about -->
+
+      <div class="section" id="section2">
+         <div class="inner">
+            <div class="sub">
+               <h3>Design
+                  Project.</h3>
+            </div><!-- .sub -->
+            <div class="list_wrap">
+
+               <div class="list">
+                  <h4>Web<br />
+                     & App
+                  </h4>
+                  <ul class="sub_list">
+                     <li>
+                        <p>01</p>
+                        <span>뷰티브랜드 네이밍<br />
+                           반응형 리디자인</span>
+                     </li>
+                     <li>
+                        <p>02</p>
+                        <span>다이어트앱 0kcal<br />
+                           기획 및 앱디자인</span>
+                     </li>
+                     <li>
+                        <p>03</p>
+                        <span>리빙브랜드 자라홈<br />
+                           반응형 리디자인</span>
+                     </li>
+                     <li>
+                        <p>04</p>
+                        <span>가전브랜드 모온<br />
+                           리디자인</span>
+                     </li>
+                     <li>
+                        <p>05</p>
+                        <span>커피브랜드 폴바셋<br />
+                           리디자인</span>
+                     </li>
+                  </ul>
+               </div><!-- .list -->
+
+               <span></span>
+
+               <div class="list">
+                  <h4>Brand
+                  </h4>
+                  <ul class="sub_list">
+                     <li>
+                        <p>01</p>
+                        <span>만두 전문점 장성향<br />
+                           BI/BX 디자인</span>
+                     </li>
+                     <li>
+                        <p>02</p>
+                        <span>커피전문점 영도 아라카페<br />
+                           BI 디자인</span>
+                     </li>
+
+                  </ul>
+               </div><!-- .list -->
+               <span></span>
+
+               <div class="list">
+                  <h4>Graphic
+                  </h4>
+                  <ul class="sub_list">
+                     <li>
+                        <p>01</p>
+                        <span>제트비 자동차 용품<br />
+                           상세페이지 多</span>
+                     </li>
+                     <li>
+                        <p>02</p>
+                        <span>일회용 마스크<br />
+                           상세페이지</span>
+                     </li>
+                     <li>
+                        <p>03</p>
+                        <span>(주)SC 절곡기<br />
+                           상세페이지</span>
+                     </li>
+                     <li>
+                        <p>04</p>
+                        <span>소다LED 실내등<br />
+                           상세페이지</span>
+                     </li>
+                     <li>
+                        <p>05</p>
+                        <span>장성향 냉동 만두<br />
+                           상세페이지</span>
+                     </li>
+                     <li>
+                        <p>06</p>
+                        <span>ETC</span>
+                     </li>
+                  </ul>
+               </div><!-- .list -->
+
+            </div><!-- list_wrap -->
+         </div><!-- .inner -->
+      </div><!-- #section2 - 목차 -->
+
+      <div class="section" id="section3">
+         <div class="inner">
+            <h3>Web & App design</h3>
+            <div class="slider">
+
+               <div class="project active">
+                  <div class="info_wrap">
+                     <div class="logo">
+                        <img src="img/logo/naming_logo.svg" alt="네이밍 로고">
+                     </div>
+                     <div class="info">
+                        <div class="mockup">
+                           <img src="img/project_web/naming_mac.png" alt="네이밍 목업">
+                        </div>
+                        <div class="content">
+                           <div class="title">
+                              <h4>NAMING</h4>
+                              <p>뷰티 브랜드 ‘네이밍’의 반응형 웹사이트 리뉴얼입니다.</p>
+                           </div><!-- title -->
+                           <div class="option">
+                              <div class="category">
+                                 <ul style="font-weight: bold;">
+                                    <li>프로젝트</li>
+                                    <li>참여도</li>
+                                    <li>페이지</li>
+                                    <li>프로그램</li>
+                                 </ul>
+                                 <ul>
+                                    <li>반응형 웹사이트</li>
+                                    <li>기획, 디자인, 퍼블리싱 100%</li>
+                                    <li>메인페이지, 서브페이지 (best, face 카테고리)</li>
+                                    <li>Ps, Figma, VSCode</li>
+                                 </ul>
+                              </div>
+                              <ul class="tag">
+                                 <li>#HTML</li>
+                                 <li>#CSS</li>
+                                 <li>#JS</li>
+                                 <li>#JQuery</li>
+                              </ul>
+                           </div><!-- .option -->
+                           <div class="btn">
+                              <button type="button" id="goweb"
+                                 onclick="window.open('https://dui1992.github.io/naming/')">GO WEB</button>
+                              <button type="button" id="process"
+                                 onclick="window.open('img/process/naming_process.pdf')">PROCESS</button>
+                              <button type="button" id="figma"
+                                 onclick="window.open('https://www.figma.com/design/LivcWtvi4g3FKSU0yfEoNq/%EB%84%A4%EC%9D%B4%EB%B0%8D-%EB%B0%98%EC%9D%91%ED%98%95-%EC%9B%B9%ED%8E%98%EC%9D%B4%EC%A7%80-%EB%A6%AC%EB%94%94%EC%9E%90%EC%9D%B8?node-id=0-1&t=PseEVaYLpSVF1Gg8-1')">FIGMA</button>
+                           </div><!-- .btn -->
+                        </div>
+                     </div>
+                  </div>
+               </div> <!-- 네이밍 -->
+               <div class="project">
+                  <div class="info_wrap">
+                     <div class="logo">
+                        <img src="img/logo/0kacl_logo.svg" alt="">
+                     </div>
+                     <div class="info">
+                        <div class="mockup">
+                           <img src="img/project_web/0kcal_mockup.png" alt="">
+                        </div>
+                        <div class="content">
+                           <div class="title">
+                              <h4>0Kcal</h4>
+                              <p>다이어트 기록 앱 '0kcal'의 기획 및 디자인입니다.</p>
+                           </div><!-- title -->
+                           <div class="option">
+                              <div>
+                                 <div class="category">
+                                       <ul style="font-weight: bold;">
+                                          <li>프로젝트</li>
+                                          <li>참여도</li>
+                                          <li>프로그램</li>
+                                       </ul>
+                                       <ul>
+                                          <li>앱 기획 + 디자인</li>
+                                          <li>기획, 디자인 100%</li>
+                                          <li>Figma</li>
+                                       </ul>
+                                 </div>
+                                 <ul class="tag">
+                                    <li>#APP</li>
+                                    <li>#PROTOTYPE</li>
+                                    <li>#FIGMA</li>
+                                 </ul>
+                              </div>
+                              <div class="qr">
+                                 <img src="img/project_web/0kcal_qr.png" alt="0kcal 프로토타입 QR코드">
+                                 <p>모바일에서<br />확인해보세요!</p>
+                              </div>
+                           </div><!-- .option -->
+                           <div class="btn">
+                              <button type="button" id="goweb"
+                                 onclick="window.open('https://www.figma.com/proto/9faZfUs4TYFKt7NYnkFvlj/0kcal-%EC%95%B1%EB%94%94%EC%9E%90%EC%9D%B8?node-id=3-2698&t=xN834V9t0LMov5jI-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=3%3A2698')">PROTOTYPE</button>
+                              <button type="button" id="process"
+                                 onclick="window.open('img/process/0kcal_process.pdf')">PROCESS</button>
+                              <button type="button" id="figma"
+                                 onclick="window.open('https://www.figma.com/design/9faZfUs4TYFKt7NYnkFvlj/0kcal-%EC%95%B1%EB%94%94%EC%9E%90%EC%9D%B8?node-id=0-1&t=PHnYxBsSNDrjSgLX-1')">FIGMA</button>
+                           </div><!-- .btn -->
+                        </div>
+                     </div>
+                  </div>
+               </div> <!-- 0kcal -->
+               <div class="project">
+                  <div class="info_wrap">
+                     <div class="logo">
+                        <img src="img/logo/zarahome_logo.svg" alt="">
+                     </div>
+                     <div class="info">
+                        <div class="mockup">
+                           <img src="img/project_web/zarahome_mac.png" alt="">
+                        </div>
+                        <div class="content">
+                           <div class="title">
+                              <h4>ZARA HOME</h4>
+                              <p>스페인 리빙 브랜드 ‘자라홈’의 반응형 웹사이트 리뉴얼입니다.</p>
+                           </div><!-- title -->
+                           <div class="option">
+                              <div class="category">
+                                 <ul style="font-weight: bold;">
+                                    <li>프로젝트</li>
+                                    <li>참여도</li>
+                                    <li>페이지</li>
+                                    <li>프로그램</li>
+                                 </ul>
+                                 <ul>
+                                    <li>반응형 웹사이트</li>
+                                    <li>기획, 디자인, 퍼블리싱 100%</li>
+                                    <li>메인페이지</li>
+                                    <li>Ps, Figma, VSCode</li>
+                                 </ul>
+                              </div>
+                              <ul class="tag">
+                                 <li>#HTML</li>
+                                 <li>#CSS</li>
+                                 <li>#JS</li>
+                                 <li>#Swiper</li>
+                              </ul>
+                           </div><!-- .option -->
+                           <div class="btn">
+                              <button type="button" id="goweb"
+                                 onclick="window.open('https://dui1992.github.io/zarahome/')">GO WEB</button>
+                              <button type="button" id="process"
+                                 onclick="window.open('img/process/zarahome_process.pdf')">PROCESS</button>
+                              <button type="button" id="figma"
+                                 onclick="window.open('https://www.figma.com/design/2ce9JppSLJjhgRCjM5my5C/ZARA-HOME-%EB%A6%AC%EB%94%94%EC%9E%90%EC%9D%B8?node-id=0-1&t=zIOp9zXHCD9L4lUm-1')">FIGMA</button>
+                           </div><!-- .btn -->
+                        </div>
+                     </div>
+                  </div>
+               </div> <!-- 자라홈 -->
+               <div class="project">
+                  <div class="info_wrap">
+                     <div class="logo">
+                        <img src="img/logo/moon_logo.svg" alt="">
+                     </div>
+                     <div class="info">
+                        <div class="mockup">
+                           <img src="img/project_web/moon_mac.png" alt="">
+                        </div>
+                        <div class="content">
+                           <div class="title">
+                              <h4>모온</h4>
+                              <p>가전 브랜드 ‘모온’의 웹사이트 리뉴얼입니다.</p>
+                           </div><!-- title -->
+                           <div class="option">
+                              <div class="category">
+                                 <ul style="font-weight: bold;">
+                                    <li>프로젝트</li>
+                                    <li>참여도</li>
+                                    <li>페이지</li>
+                                    <li>프로그램</li>
+                                 </ul>
+                                 <ul>
+                                    <li>PC 웹사이트</li>
+                                    <li>기획, 디자인, 퍼블리싱 100%</li>
+                                    <li>메인페이지</li>
+                                    <li>Ps, VSCode</li>
+                                 </ul>
+                              </div>
+                              <ul class="tag">
+                                 <li>#HTML</li>
+                                 <li>#CSS</li>
+                                 <li>#JS</li>
+                                 <li>#JQuery</li>
+                              </ul>
+                           </div><!-- .option -->
+                           <div class="btn">
+                              <button type="button" id="goweb" onclick="window.open('https://dui1992.github.io/mo-on/')">GO
+                                 WEB</button>
+                              <button type="button" id="process"
+                                 onclick="window.open('img/process/moon_process.pdf')">PROCESS</button>
+                           </div><!-- .btn -->
+                        </div>
+                     </div>
+                  </div>
+               </div> <!-- 모온 -->
+               <div class="project">
+                  <div class="info_wrap">
+                     <div class="logo">
+                        <img src="img/logo/paul_logo.svg" alt="">
+                     </div>
+                     <div class="info">
+                        <div class="mockup">
+                           <img src="img/project_web/paul_mac.png" alt="">
+                        </div>
+                        <div class="content">
+                           <div class="title">
+                              <h4>PAUL BASSET</h4>
+                              <p>프리미엄 커피 브랜드 ‘폴 바셋’의 웹사이트 리뉴얼입니다.</p>
+                           </div><!-- title -->
+                           <div class="option">
+                              <div class="category">
+                                 <ul style="font-weight: bold;">
+                                    <li>프로젝트</li>
+                                    <li>참여도</li>
+                                    <li>페이지</li>
+                                    <li>프로그램</li>
+                                 </ul>
+                                 <ul>
+                                    <li>PC 웹사이트</li>
+                                    <li>기획, 디자인, 퍼블리싱 100%</li>
+                                    <li>메인페이지</li>
+                                    <li>Ps, VSCode</li>
+                                 </ul>
+                              </div>
+                              <ul class="tag">
+                                 <li>#HTML</li>
+                                 <li>#CSS</li>
+                                 <li>#JS</li>
+                                 <li>#JQuery</li>
+                              </ul>
+                           </div><!-- .option -->
+                           <div class="btn">
+                              <button type="button" id="goweb"
+                                 onclick="window.open('https://dui1992.github.io/paulbasset/')">GO WEB</button>
+                              <button type="button" id="process"
+                                 onclick="window.open('img/process/paulbasset_process.pdf')">PROCESS</button>
+                           </div><!-- .btn -->
+                        </div>
+                     </div>
+                  </div>
+               </div> <!-- 폴바셋 -->
+            </div><!-- .slider -->
+         </div><!-- .inner -->
+
+
+
+      </div><!-- #section3 - 웹 -->
+
+      <div class="section" id="section4">
+         <div class="inner">
+            <h3>Brand design</h3>
+            <div class="brand_wrap">
+               <div class="brand">
+                  <img src="img/project_brand/bg1.jpg" alt="장성향">
+                  <div class="text_box">
+                     <div class="text">
+                        <h4>장성향</h4>
+                        <p>올드보이 만두로 유명한 만두 전문점 ‘장성향’의<br />
+                           오시리아점 브랜딩과 온라인 스토어 디자인을 진행하였습니다.</p>
+                     </div>
+                     <button type="button" onclick="window.open('img/project_brand/jsh.pdf')">VIEW</button>
+                  </div>
+               </div><!-- .brand -->
+               <div class="brand">
+                  <img src="img/project_brand/bg2.jpg" alt="아라카페">
+                  <div class="text_box">
+                     <div class="text">
+                        <h4>영도 아라카페</h4>
+                        <p>부산 영도에 위치한 오션뷰 카페 ‘영도 아라카페’의<br />
+                           로고 디자인을 진행하였습니다.</p>
+                     </div>
+                     <button type="button" onclick="window.open('img/project_brand/aracafe.pdf')">VIEW</button>
+                  </div>
+               </div><!-- .brand -->
+            </div>
+         </div><!-- .inner -->
+      </div><!-- #section4 - 브랜딩 -->
+
+      <div class="section fp-auto-height" id="section5">
+         <div class="inner">
+            <h3>Graphic design</h3>
+            <h4>Product Detail Page</h4>
+            <div class="pdp_wrap">
+               <div class="pdp_cont">
+                  <div class="text_wrap">
+                     <div class="text">
+                        <h5>제트비 레더 알칸타라 핸들커버</h5>
+                        <span>#브라운</span>
+                        <span>#고급스러움</span>
+                        <span>#스토리텔링</span>
+                     </div>
+                     <button type="button" onclick="window.open('img/project_graphic/pdp1.jpg')">VIEW</button>
+                  </div><!-- .text_wrap -->
+                  <img src="img/project_graphic/01_zb_handle1.png" alt="">
+               </div><!-- .pdp_cont -->
+               <div class="pdp_cont">
+                  <div class="text_wrap">
+                     <div class="text">
+                        <h5>제트비 스왈로 핸들커버</h5>
+                        <span>#블루</span>
+                        <span>#기능성</span>
+                        <span>#신뢰감</span>
+                     </div>
+                     <button type="button" onclick="window.open('img/project_graphic/pdp2.jpg')">VIEW</button>
+                  </div><!-- .text_wrap -->
+                  <img src="img/project_graphic/02_zb_handle2.png" alt="">
+               </div><!-- .pdp_cont -->
+               <div class="pdp_cont">
+                  <div class="text_wrap">
+                     <div class="text">
+                        <h5>제트비 차량용 코일매트</h5>
+                        <span>#그린</span>
+                        <span>#쾌적함</span>
+                        <span>#안전성</span>
+                     </div>
+                     <button type="button" onclick="window.open('img/project_graphic/pdp3.jpg')">VIEW</button>
+                  </div><!-- .text_wrap -->
+                  <img src="img/project_graphic/03_zb_coil.png" alt="">
+               </div><!-- .pdp_cont -->
+               <div class="pdp_cont">
+                  <div class="text_wrap">
+                     <div class="text">
+                        <h5>제트비 PPF 카쉴드</h5>
+                        <span>#옐로우</span>
+                        <span>#기능성</span>
+                        <span>#스토리텔링</span>
+                     </div>
+                     <button type="button" onclick="window.open('img/project_graphic/pdp4.jpg')">VIEW</button>
+                  </div><!-- .text_wrap -->
+                  <img src="img/project_graphic/04_zb_ppf.png" alt="">
+               </div><!-- .pdp_cont -->
+               <div class="pdp_cont">
+                  <div class="text_wrap">
+                     <div class="text">
+                        <h5>제트비 가죽 대쉬보드커버</h5>
+                        <span>#블랙</span>
+                        <span>#고급스러움</span>
+                        <span>#기능성</span>
+                     </div>
+                     <button type="button" onclick="window.open('img/project_graphic/pdp5.jpg')">VIEW</button>
+                  </div><!-- .text_wrap -->
+                  <img src="img/project_graphic/05_zb_dash.png" alt="">
+               </div><!-- .pdp_cont -->
+               <div class="pdp_cont">
+                  <div class="text_wrap">
+                     <div class="text">
+                        <h5>(주)SC 소형 절곡기</h5>
+                        <span>#레드</span>
+                        <span>#전문성</span>
+                        <span>#정보성</span>
+                     </div>
+                     <button type="button" onclick="window.open('img/project_graphic/pdp6.jpg')">VIEW</button>
+                  </div><!-- .text_wrap -->
+                  <img src="img/project_graphic/06_sc.png" alt="">
+               </div><!-- .pdp_cont -->
+               <div class="pdp_cont">
+                  <div class="text_wrap">
+                     <div class="text">
+                        <h5>소다LED 차량용 LED 실내등</h5>
+                        <span>#블랙</span>
+                        <span>#기능성</span>
+                        <span>#안전성</span>
+                     </div>
+                     <button type="button" onclick="window.open('img/project_graphic/pdp7.jpg')">VIEW</button>
+                  </div><!-- .text_wrap -->
+                  <img src="img/project_graphic/07_soda.png" alt="">
+               </div><!-- .pdp_cont -->
+               <div class="pdp_cont">
+                  <div class="text_wrap">
+                     <div class="text">
+                        <h5>장성향 수제 만두</h5>
+                        <span>#정통맛집</span>
+                        <span>#신뢰감</span>
+                        <span>#자부심</span>
+                     </div>
+                     <button type="button" onclick="window.open('img/project_graphic/pdp8.jpg')">VIEW</button>
+                  </div><!-- .text_wrap -->
+                  <img src="img/project_graphic/08_jsh.png" alt="">
+               </div><!-- .pdp_cont -->
+            </div><!-- pdp_wrap -->
+            <h4>Event Banner</h4>
+            <p class="click">이미지를 클릭해 보세요!</p>
+            <div class="container">
+               <div class="img-popup">
+                  <div class="popup-inner">
+                     <img src="#" alt="이미지1">
+                     <a href="#" class="close-btn">
+                        <span class="blind">
+                           <svg width="30" height="30" viewBox="0 0 30 30" fill="none"
+                              xmlns="http://www.w3.org/2000/svg">
+                              <g clip-path="url(#clip0_154_2124)">
+                                 <path
+                                    d="M30 1.7675L28.2325 0L15 13.2325L1.7675 0L0 1.7675L13.2325 15L0 28.2325L1.7675 30L15 16.7675L28.2325 30L30 28.2325L16.7675 15L30 1.7675Z"
+                                    fill="#fff" />
+                              </g>
+                              <defs>
+                                 <clipPath id="clip0_154_2124">
+                                    <rect width="30" height="30" fill="white" />
+                                 </clipPath>
+                              </defs>
+                           </svg>
+                        </span>
+                     </a>
+                  </div>
+               </div>
+               <div class="item-box">
+                  <div class="event_wrap">
+                     <a href="#">
+                        <img src="img/project_graphic/event1.jpg" alt="이미지1">
+                     </a>
+                     <a href="#">
+                        <img src="img/project_graphic/event2.jpg" alt="이미지2">
+                     </a>
+                     <a href="#">
+                        <img src="img/project_graphic/event3.jpg" alt="이미지3">
+                     </a>
+                     <a href="#">
+                        <img src="img/project_graphic/event4.gif" alt="이미지4">
+                     </a>
+                     <a href="#">
+                        <img src="img/project_graphic/event5.jpg" alt="이미지5">
+                     </a>
+                     <a href="#">
+                        <img src="img/project_graphic/event6.jpg" alt="이미지6">
+                     </a>
+                  </div>
+               </div>
+            </div>
+         </div><!-- .inner -->
+
+
+      </div><!-- #section5 - 그래픽 -->
+
+      <footer class="section footer">
+
+         <div class="inner">
+            <div class="text">
+               <h2>Thank you for
+                  <p>Watching</p>
+               </h2>
+               <div class="contact">
+                  <p>(+82)01055592025<br />
+                  1992vibe@naver.com</p>
+               </div>
+            </div><!-- .text -->
+            <button type="button" onclick="window.open('img/parkjuhui_portfolio.pdf')">OPEN PDF</button>
+                
+         </div><!-- .inner -->
+
+      </footer><!-- .contact -->
+
+      <script src="lib/slider.js"></script>
+
+
+</body>
+
+</html>

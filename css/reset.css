@@ -1,0 +1,163 @@
+@font-face {
+  font-family: 'Humble Nostalgia';
+  src: url('font/HumbleNostalgia-Regular.eot');
+  src: url('font/HumbleNostalgia-Regular.eot?#iefix') format('embedded-opentype'),
+      url('font/HumbleNostalgia-Regular.woff2') format('woff2'),
+      url('font/HumbleNostalgia-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'DM Sans';
+  src: url('font/DMSans-Regular.eot');
+  src: url('font/DMSans-Regular.eot?#iefix') format('embedded-opentype'),
+      url('font/DMSans-Regular.woff2') format('woff2'),
+      url('font/DMSans-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'DM Sans';
+  src: url('font/DMSans-Medium.eot');
+  src: url('font/DMSans-Medium.eot?#iefix') format('embedded-opentype'),
+      url('font/DMSans-Medium.woff2') format('woff2'),
+      url('font/DMSans-Medium.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'DM Sans';
+  src: url('font/DMSans-Bold.eot');
+  src: url('font/DMSans-Bold.eot?#iefix') format('embedded-opentype'),
+      url('font/DMSans-Bold.woff2') format('woff2'),
+      url('font/DMSans-Bold.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+
+@font-face {
+  font-family: 'Pretendard';
+  src: url('font/Pretendard-Regular.eot');
+  src: url('font/Pretendard-Regular.eot?#iefix') format('embedded-opentype'),
+      url('font/Pretendard-Regular.woff2') format('woff2'),
+      url('font/Pretendard-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Pretendard';
+  src: url('font/Pretendard-SemiBold.eot');
+  src: url('font/Pretendard-SemiBold.eot?#iefix') format('embedded-opentype'),
+      url('font/Pretendard-SemiBold.woff2') format('woff2'),
+      url('font/Pretendard-SemiBold.woff') format('woff');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Pretendard';
+  src: url('font/Pretendard-Bold.eot');
+  src: url('font/Pretendard-Bold.eot?#iefix') format('embedded-opentype'),
+      url('font/Pretendard-Bold.woff2') format('woff2'),
+      url('font/Pretendard-Bold.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  --colorblack : #0a0a0a;
+  --colorivory : #F7F5F1;
+  --colorwhite : #fff;
+  --colordeeporange : #DC601C;
+  --colorlightorange : #DC7D49;
+  --color0kcal : #7412F0;
+  --colorzarahome : #1A1A1A;
+  --colormoon : #948A81;
+  --colorpaulbasset : #3E2B2E;
+}
+.scroll::-webkit-scrollbar {
+  display: none;
+}
+.scroll {
+  -ms-overflow-style: none; /* 인터넷 익스플로러 */
+  scrollbar-width: none; /* 파이어폭스 */
+}
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: 'Pretendard';
+}
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, ins, kbd, q, s, samp,
+small, strike, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+iframe {
+  display: none;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+
+li {
+  list-style: none;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+body {
+  color: var(--colorblack);
+}
