@@ -79,7 +79,7 @@ button {
 
 .slider .project.active {
   Background-color:#ffffff;
-/*   flex-grow: 10000; */
+  flex-grow: 10000;
   -webkit-transform: scale(1);
           transform: scale(1);
   max-width: 2060px;
@@ -93,8 +93,6 @@ button {
   padding: 0 50px;
   height: 100%;
 }
-
-
 
 .slider .project.active .info_wrap .info {
   display: flex;
@@ -113,6 +111,7 @@ button {
 
 .slider .project .info_wrap .info .mockup {
   margin-right: 50px;
+  max-width: 580px;
   width: 48%;
 }
 .slider .project .info_wrap .info .mockup img {
